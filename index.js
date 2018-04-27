@@ -7,6 +7,7 @@ var currentTurn = "X";
 function gameStart() {
 	for (var i = 0; i < buttons.length; i++) {
 		buttons[i].addEventListener("click", function (e) {
+			e.target.disabled = true; 
 			e.target.textContent = currentTurn;
 			e.target.style.color = "red";
 			nextTurn();
@@ -14,6 +15,11 @@ function gameStart() {
 			gameEnd();
 		})
 	}
+}
+
+function pushedAlready(target){
+
+
 }
 
 function nextTurn() {
